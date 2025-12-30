@@ -24,7 +24,7 @@ DEPEND="dev-libs/glib
 		jpeg? ( virtual/jpeg )
 		tiff? ( media-libs/tiff )
 		imagick? ( media-gfx/imagemagick !media-gfx/gifsicle )
-		webp? ( media-libs/webp )"
+		webp? ( media-libs/libwebp )"
 
 RDEPEND="${DEPEND}"
 BDEPEND=""
