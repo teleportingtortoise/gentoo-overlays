@@ -15,14 +15,21 @@ DEPEND="virtual/rust"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_configure() {
-	econf --with-popt
-}
-
 pkg_postinst() {
+	echo '\
+		[Desktop Entry]\
+		Type=Application\
+		Name=oklch-color-picker\
+		Comment=OKlab color editor.\
+		Path=/usr/bin\
+		Exec=oklch-color-picker\
+		Icon=kcolorchooser\
+		Terminal=false'\
+	>> /usr/share/applications/oklch-color-picker.desktop
 	xdg_desktop_database_update
 }
 
 pkg_postrm() {
+	rm /usr/share/applications/oklch-color-picker.desktop
 	xdg_desktop_database_update
 }
