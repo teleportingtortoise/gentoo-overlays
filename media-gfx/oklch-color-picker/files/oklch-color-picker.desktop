@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=oklch-color-picker
+Comment=OKlab color editor.
+Path=/usr/bin
+Exec=oklch-color-picker
+Icon=kcolorchooser
+Terminal=false

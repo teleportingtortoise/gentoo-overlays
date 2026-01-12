@@ -5,7 +5,7 @@ DESCRIPTION="Simple GTK+1/2/3 painting program designed for creating icons and p
 
 HOMEPAGE="https://github.com/wjaguar/mtPaint"
 EGIT_REPO_URI="https://github.com/wjaguar/mtPaint.git"
-EDIT_COMMIT="a50460bacadfc522705648c1367541974c5d109d"
+EGIT_COMMIT="a50460bacadfc522705648c1367541974c5d109d"
 
 LISCENSE="GPL-3"
 SLOT="0"
