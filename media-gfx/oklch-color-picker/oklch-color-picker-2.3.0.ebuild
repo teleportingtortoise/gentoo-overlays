@@ -5,6 +5,7 @@ DESCRIPTION="OKlab color picker that takes input color and outputs edits to stdo
 
 HOMEPAGE="https://github.com/eero-lehtinen/${PN}"
 SRC_URI="https://github.com/eero-lehtinen/${PN}/releases/download/${PV}/${P}-x86_64-unknown-linux-gnu.tar.gz"
+S="${workdir}/${P}-x86_64-unknown-linux-gnu.tar.gz"
 
 LISCENSE="MIT"
 SLOT="0"
