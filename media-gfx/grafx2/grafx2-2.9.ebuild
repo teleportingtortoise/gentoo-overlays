@@ -59,7 +59,7 @@ src_compile() {
 src_install() {
 	cd ${S}/src/
 	emake DESTDIR="${D}" PREFIX="/usr" install
-	dobin ${D}/${PN}-* ${D}/${PN}
+	dosym /usr/bin/"$(ls ${D}/usr/bin/)" /usr/bin/${PN}
 }
 
 pkg_postinst() {
