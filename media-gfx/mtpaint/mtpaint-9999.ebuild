@@ -1,3 +1,6 @@
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
 EAPI=8
 inherit git-r3 xdg-utils
 
@@ -9,7 +12,7 @@ EGIT_REPO_URI="https://github.com/wjaguar/mtPaint.git"
 LISCENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="-gtk1 -gtk2 +gtk3 imagick nls jpeg tiff webp -thread"
+IUSE="gtk1 gtk2 gtk3 imagemagick nls jpeg tiff webp thread"
 
 DEPEND="dev-libs/glib
 		media-libs/libpng
@@ -47,18 +50,18 @@ src_configure() {
 	econf \
 		debug \
 		man \
-		$(usex_null gtk1) \
-		$(usex_null gtk2) \
+		$(usex_no gtk1) \
+		$(usex_no gtk2) \
 		$(usex_null gtk3) \
 		$(usex_no thread) \
-		$(usex_null imagick) \
+		$(usex_null imagemagick "imagick") \
 		$(usex_no nls "intl") \
 		$(usex_no jpeg) \
 		$(usex_no tiff) \
 		$(usex_no webp)
 
 	# append custom CFLAGS
-	echo "CFLAG += ${CFLAGS}" >> _conf.txt || die "Faild to add CFLAGS."
+	echo "CFLAG += ${CFLAGS}" >> _conf.txt || die "Failed to add CFLAGS."
 }
 
 src_compile() {
