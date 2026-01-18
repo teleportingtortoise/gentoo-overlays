@@ -59,10 +59,10 @@ src_compile() {
 src_install() {
 	cd ${S}/src/
 	emake DESTDIR="${D}" PREFIX="/usr" install
+	dobin ${D}/${PN}-* ${D}/${PN}
 }
 
 pkg_postinst() {
-	mv /usr/bin/grafx2-* /usr/bin/grafx2
 	xdg_desktop_database_update
 }
 

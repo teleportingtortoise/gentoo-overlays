@@ -21,14 +21,13 @@ BDEPEND=""
 
 src_install() {
 	dobin "${PN}"
+	doins "${FILESDIR}"/"${PN}".desktop /usr/share/applications/"${PN}".desktop
 }
 
 pkg_postinst() {
-	cp "${FILESDIR}"/"${PN}".desktop /usr/share/applications/"${PN}".desktop
 	xdg_desktop_database_update
 }
 
 pkg_postrm() {
-	rm /usr/share/applications/"${PN}".desktop
 	xdg_desktop_database_update
 }
