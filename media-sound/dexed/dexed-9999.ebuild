@@ -37,10 +37,10 @@ src_compile() {
 
 src_install() {
 	newbin "${S}"/build/Source/Dexed_artefacts/Standalone/"${PNC}" "${PN}"
-	libinto "/usr/lib/vst/"
-	newlib "${S}"/build/Source/Dexed_artefacts/VST3/"${PNC}".vst3/Contents/x86_64-linux/"${PNC}".so "${PN}".so
-	libinto "/usr/lib/clap/"
-	newlib "${S}"/build/Source/Dexed_artefacts/CLAP/"${PNC}".clap "${PN}".clap
+	insinto /usr/lib/vst/
+	newins "${S}"/build/Source/Dexed_artefacts/VST3/"${PNC}".vst3/Contents/x86_64-linux/"${PNC}".so "${PN}".so
+	insinto /usr/lib/clap/
+	newins "${S}"/build/Source/Dexed_artefacts/CLAP/"${PNC}".clap "${PN}".clap
 	insinto /usr/share/applications/
 	doins "${FILESDIR}"/"${PN}".desktop
 	insinto /usr/share/pixmaps/
