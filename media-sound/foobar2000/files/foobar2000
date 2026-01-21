@@ -11,9 +11,9 @@ prgPrefix="$HOME/.local/share/wineprefixes/$prgName"
 mkdir -p "$prgHome" || exit 1
 mkdir -p "$HOME/.local/share/wineprefixes" || exit 1
 # Delete broken symlinks
-find -L "$prgHome" -type l -delete
+find "$prgHome" -type l -exec test ! -e {} \; -print -delete
 # Update existing symlinks, add new symlinks
-cp -urs "$prgRealPath/"* "$prgHome" 2> /dev/null
+cp -vurs "$prgRealPath/"* "$prgHome" 2> /dev/null
 
 # Switches: use -something instead of /something to avoid confusion with Unix paths
 # Also convert Unix paths to Windows paths.
