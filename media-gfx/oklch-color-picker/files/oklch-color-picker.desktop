@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
+Categories=Graphics
 Name=oklch-color-picker
 Comment=OKlab color editor.
 Path=/usr/bin
