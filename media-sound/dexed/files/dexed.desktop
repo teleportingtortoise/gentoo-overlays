@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Categories=Audio
+Name=Dexed
+Comment=
+Path=/usr/bin
+Exec=dexed
+Icon=dexed
+Terminal=false
