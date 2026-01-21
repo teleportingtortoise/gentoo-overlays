@@ -42,9 +42,6 @@ usex_null() {
 	usex "$1" "${2:-$1}" ""
 }
 
-src_prepare() {
-	default
-}
 
 src_configure() {
 	# debug needed for custom CFLAGS
@@ -70,7 +67,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" PREFIX="/usr" install
 }
 
 pkg_postinst() {
