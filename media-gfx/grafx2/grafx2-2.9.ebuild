@@ -6,7 +6,6 @@ EAPI=8
 DESCRIPTION="A bitmap paint program inspired by the Amiga programs ​Deluxe Paint and Brilliance. Known for use in pixel art."
 
 HOMEPAGE="http://grafx2.chez.com"
-HOMEPAGE="http://pulkomandy.tk/projects/GrafX2/downloads"
 SRC_URI="http://pulkomandy.tk/projects/GrafX2/downloads/81 -> ${P}.tar.gz"
 
 LISCENSE="GPL-2"
@@ -32,8 +31,6 @@ DEPEND="media-libs/libsdl
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-S="${WORKDIR}/${PN}-v${PV}"
-
 usex_no() {
 	usex "$1" "${2:-$1}" "no${2:-$1}"
 }
@@ -42,8 +39,11 @@ usex_null() {
 	usex "$1" "${2:-$1}" ""
 }
 
+
+S="${WORKDIR}/${PN}-v${PV}"
+
 src_compile() {
-	cd ${S}/src/
+	cd "${S}"/src/
 	emake release \
 		$(usex_null ttf "TTF=1") \
 		$(usex_null lua "LUA=1") \
@@ -57,9 +57,9 @@ src_compile() {
 }
 
 src_install() {
-	cd ${S}/src/
+	cd "${S}"/src/
 	emake DESTDIR="${D}" PREFIX="/usr" install
-	dosym /usr/bin/"$(ls ${D}/usr/bin/)" /usr/bin/${PN}
+	dosym /usr/bin/"$(ls ${D}/usr/bin/)" /usr/bin/"${PN}"
 }
 
 pkg_postinst() {
