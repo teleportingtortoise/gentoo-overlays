@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+inherit xdg-utils
 
 DESCRIPTION="A bitmap paint program inspired by the Amiga programs ​Deluxe Paint and Brilliance. Known for use in pixel art."
 

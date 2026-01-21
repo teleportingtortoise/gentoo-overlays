@@ -1,18 +1,19 @@
 #!/bin/bash
+# Original script by Mario Finelli <mario at finel dot li>
 
-progName="foobar2000"
-progRealPath="/usr/share/$progName"
-progHome="$HOME/.$progName"
-progBin="$progName.exe"
-progPrefix="$HOME/.local/share/wineprefixes/$progName"
+prgName="foobar2000"
+prgRealPath="/usr/share/$prgName"
+prgHome="$HOME/.$prgName"
+prgBin="$prgName.exe"
+prgPrefix="$HOME/.local/share/wineprefixes/$prgName"
 
 # Symlink stuff
-mkdir -p "$progHome" || exit 1
+mkdir -p "$prgHome" || exit 1
 mkdir -p "$HOME/.local/share/wineprefixes" || exit 1
 # Delete broken symlinks
-find -L "$progHome" -type l -delete
+find -L "$prgHome" -type l -delete
 # Update existing symlinks, add new symlinks
-cp -urs "$progRealPath/"* "$progHome" 2> /dev/null
+cp -urs "$prgRealPath/"* "$prgHome" 2> /dev/null
 
 # Switches: use -something instead of /something to avoid confusion with Unix paths
 # Also convert Unix paths to Windows paths.
@@ -26,5 +27,5 @@ for arg; do
     fi
 done
 
-# wine "$progHome/$progBin" "${args[@]}"
-WINEPREFIX="$progPrefix" wine "$progHome/$progBin" "${args[@]}"
+# wine "$prgHome/$prgBin" "${args[@]}"
+WINEPREFIX="$prgPrefix" wine "$prgHome/$prgBin" "${args[@]}"
