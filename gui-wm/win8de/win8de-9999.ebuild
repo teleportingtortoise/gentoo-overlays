@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/er-bharat/Win8DE.git"
 LISCENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="-session -sddm-theme"
+IUSE="session sddm-theme"
 
 DEPEND="gui-wm/labwc
 		dev-libs/wayland
