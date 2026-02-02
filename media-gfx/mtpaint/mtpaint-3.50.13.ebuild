@@ -13,7 +13,7 @@ EGIT_COMMIT="a50460bacadfc522705648c1367541974c5d109d"
 LISCENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk1 gtk2 gtk3 imagemagick nls jpeg tiff webp thread"
+IUSE="gtk1 gtk2 +gtk3 imagemagick nls jpeg tiff webp thread"
 
 DEPEND="dev-libs/glib
 		media-libs/libpng

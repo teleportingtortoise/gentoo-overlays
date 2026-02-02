@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://github.com/wjaguar/mtPaint.git"
 LISCENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk1 gtk2 gtk3 imagemagick nls jpeg tiff webp thread"
+IUSE="gtk1 gtk2 +gtk3 imagemagick nls jpeg tiff webp thread"
 
 DEPEND="dev-libs/glib
 		media-libs/libpng
