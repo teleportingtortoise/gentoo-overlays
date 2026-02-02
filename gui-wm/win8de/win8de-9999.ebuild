@@ -14,11 +14,17 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="session sddm-theme"
 
-DEPEND="session? ( gui-wm/labwc )
+DEPEND="dev-build/ninja
+		sys-devel/gcc
+		sys-libs/glibc
 		dev-libs/wayland
 		gui-libs/wlroots
 		dev-qt/qtbase
-		sys-libs/pam"
+		dev-qt/qtdeclarative
+		dev-qt/qtwayland
+		sys-libs/pam
+		kde-plasma/layer-shell-qt
+		session? ( gui-wm/labwc )"
 
 RDEPEND="${DEPEND}"
 BDEPEND=""
@@ -40,10 +46,9 @@ src_install() {
 	dobin "${S}"/build/bin/Win8Start
 	dobin "${S}"/build/bin/Win8Wall
 
-	insinto /usr/share/
-	doins -r "${S}"/assets/labwc3
-
 	if use session; then
+		insinto /usr/share/
+		doins -r "${S}"/assets/labwc3
 		insinto /usr/share/wayland-sessions/
 		doins "${S}"/assets/wayland-sessions/labwc-win8.desktop
 	fi
@@ -56,7 +61,7 @@ src_install() {
 
 pkg_postinst() {
 	if ! use session; then
-		echo "Note: If you want to install a session to use Win8Start as your desktop environment you need to set the 'session' use flag for this package."
+		echo "Note: If you want to install a session to use Win8DE as your desktop environment you need to set the 'session' use flag for this package."
 	fi
 
 	if ! use sddm-theme; then
