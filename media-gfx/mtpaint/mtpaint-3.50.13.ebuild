@@ -26,7 +26,7 @@ DEPEND="dev-libs/glib
 		gtk3? ( >=x11-libs/gtk+-3 )
 		jpeg? ( virtual/jpeg )
 		tiff? ( media-libs/tiff )
-		imagemagick? ( media-gfx/imagemagick !media-gfx/gifsicle )
+		imagemagick? ( || ( media-gfx/imagemagick media-gfx/gifsicle ) )
 		webp? ( media-libs/libwebp )"
 
 RDEPEND="${DEPEND}"
