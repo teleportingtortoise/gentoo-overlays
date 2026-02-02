@@ -6,7 +6,7 @@ inherit git-r3 xdg-utils
 
 DESCRIPTION="Simple GTK+1/2/3 painting program designed for creating icons and pixel art."
 
-HOMEPAGE="https://github.com/wjaguar/mtPaint"
+HOMEPAGE="https://mtpaint.sourceforge.net"
 EGIT_REPO_URI="https://github.com/wjaguar/mtPaint.git"
 EGIT_COMMIT="a50460bacadfc522705648c1367541974c5d109d"
 
