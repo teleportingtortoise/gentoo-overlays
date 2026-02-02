@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="session sddm-theme"
 
-DEPEND="gui-wm/labwc
+DEPEND="session? ( gui-wm/labwc )
 		dev-libs/wayland
 		gui-libs/wlroots
 		dev-qt/qtbase
