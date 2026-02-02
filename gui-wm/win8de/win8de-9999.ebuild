@@ -56,7 +56,7 @@ src_install() {
 
 pkg_postinst() {
 	if ! use session; then
-		echo "Note: If you would want to install a session to use Win8Start as your Desktop Environment you need to set the 'session' use flag for this package."
+		echo "Note: If you want to install a session to use Win8Start as your desktop environment you need to set the 'session' use flag for this package."
 	fi
 
 	if ! use sddm-theme; then
